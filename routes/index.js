@@ -9,6 +9,12 @@ router.get('/', function(req, res, next) {
 
 router.post('/bva',function (req, res) {
 
+  var uuid1 = Math.floor(Math.random()*100000000);
+  var uuid2 = Math.floor(Math.random()*100000000);
+  var uuid3 = Math.floor(Math.random()*100000000);
+  var uuid4 = Math.floor(Math.random()*100000000);
+  var uuid5 = Math.floor(Math.random()*100000000);
+
   var clientId = '3MVG9qwrtt_SGpCvjWgjr6iTlzasfEXKEX4CpJH697tmvMKY_REcAosImBkFzgWdcPlPrh2WpNZt6sT51CMzi';
   var clientSecret = '6B910DEF3E10F6CCE4D976A6E9FA94BFA5182C2048B0EC16EAAE51BCA562B3E5';
   var username = 'integration.user@abbvie.com.pap.rhfd';
@@ -25,17 +31,17 @@ router.post('/bva',function (req, res) {
         "transactionType": "BVS",
         "transactionMessage": "Eligibility and Benefits Found",
         "subscriber": "PPM",
-        "puslisherRequestId": "23980173579473615274",
+        "puslisherRequestId": req.body.Referral.PublisherReferralId,
         "publisher": "BVA",
-        "dateSent": "2018-11-08T09:07:18.684Z",
-        "publisherId": "6404140854",
+        "dateSent": req.body.Referral.DateSent,
+        "publisherId": req.body.Referral.Patient.PublisherPatientId,
         "patientDiagnosisAndTreatments": [{
-          "publisherId": "1442_drug",
-          "ndc": "00074-3799-02",
-          "drugName": "RINVOQ"
+          "publisherId": random(),
+          "ndc": req.body.Referral.Diagnosis.Prescriptions.Prescription.Drug.NDC,
+          "drugName": req.body.Referral.Diagnosis.Prescriptions.Prescription.Drug.DrugName,
         }],
         "memberPlans": [{
-          "publisherId": "73732887",
+          "publisherId": `${uuid1}`,
           "rxPCN": "73732887",
           "rxGroupNumber": "73732887",
           "rxBIN": "73732887",
@@ -55,21 +61,21 @@ router.post('/bva',function (req, res) {
           "disadvantageAccessReason": "Affordability"
         }		],
         "priorAuthorizations": [{
-          "publisherId": "1866899",
+          "publisherId": ""+uuid2,
           "statusforVariableParagraph": "Approved with Expiration",
           "statusDate": "2019-03-29",
           "status": "PA Approved",
           "planPhoneNumber": "9898989892",
           "planName": "PA for Bridge 4",
           "planFaxNumber": "9898989898",
-          "patientInsuranceId": "73732887",
+          "patientInsuranceId": ""+uuid1,
           "formURL": "https://master-api.integration.covermymeds.com/forms/pdf/thumbs/270/pseudo_4part_28520.jpg",
           "formName": "pseudo_4part"
         }],
         "memberBenefits": [{
-          "publisherId": "28440176",
+          "publisherId": ""+uuid3,
           "specialtyPharmacyOptions": "One Mandated Pharmacy 10",
-          "publisherMemberPlanId": "73732887",
+          "publisherMemberPlanId": ""+uuid1,
           "priorAuthorizationRequired": "Yes",
           "pharmacyMedicalAnnualOOPMetToDate": 1250.0,
           "pharmacyMedicalAnnualOOP": 13030.0,
@@ -78,9 +84,9 @@ router.post('/bva',function (req, res) {
           "pharmacyAnnualDeductible": 1510.0,
           "patientResponsibility": "Copayment",
           "patientPharmacies": [{
-            "publisherId": "49517633",
+            "publisherId":""+uuid4,
             "transactionType": "BVS",
-            "publisherMemberPlanId": "73732887",
+            "publisherMemberPlanId": ""+uuid1,
             "pharmacyZipCode": "70185",
             "pharmacyState": "IL",
             "pharmacyPhone": "8898985419",
