@@ -36,7 +36,7 @@ router.post('/bva',function (req, res) {
         "dateSent": req.body.Referral.DateSent,
         "publisherId": req.body.Referral.Patient.PublisherPatientId,
         "patientDiagnosisAndTreatments": [{
-          "publisherId": random(),
+          "publisherId": ""+uuid5,
           "ndc": req.body.Referral.Diagnosis.Prescriptions.Prescription.Drug.NDC,
           "drugName": req.body.Referral.Diagnosis.Prescriptions.Prescription.Drug.DrugName,
         }],
