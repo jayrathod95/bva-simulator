@@ -102,11 +102,13 @@ router.post('/bva',function (req, res) {
       }
     };
 
-    axios.put(`${response.data.instance_url}/services/apexrest/dataexchange/v1/bvs`,data,{headers: {'Content-Type':'application/json','Authorization':`Bearer ${response.data.access_token}`}}).then(response => {
-      console.log(response.data);
-    },reason => {
-      console.error(reason);
-    })
+    setTimeout(response=>{
+      axios.put(`${response.data.instance_url}/services/apexrest/dataexchange/v1/bvs`,data,{headers: {'Content-Type':'application/json','Authorization':`Bearer ${response.data.access_token}`}}).then(response => {
+        console.log(response.data);
+      },reason => {
+        console.error(reason);
+      })
+    },10000);
 
   },reason => {
     console.error(reason);
