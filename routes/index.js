@@ -102,7 +102,7 @@ router.post('/bva',function (req, res) {
       }
     };
 
-    setTimeout(response=>{
+    setTimeout(()=>{
       axios.put(`${response.data.instance_url}/services/apexrest/dataexchange/v1/bvs`,data,{headers: {'Content-Type':'application/json','Authorization':`Bearer ${response.data.access_token}`}}).then(response => {
         console.log(response.data);
       },reason => {
