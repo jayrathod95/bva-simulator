@@ -18,7 +18,7 @@ router.post('/bva',function (req, res) {
   var clientId = '3MVG9qwrtt_SGpCvjWgjr6iTlzasfEXKEX4CpJH697tmvMKY_REcAosImBkFzgWdcPlPrh2WpNZt6sT51CMzi';
   var clientSecret = '6B910DEF3E10F6CCE4D976A6E9FA94BFA5182C2048B0EC16EAAE51BCA562B3E5';
   var username = 'integration.user@abbvie.com.pap.rhfd';
-  var password = 'newuser@12345\n';
+  var password = 'newuser@123456';
   //authenticate with sf
   var data = `grant_type=password&client_id=${clientId}&client_secret=${clientSecret}&username=${username}&password=${password}`;
   axios.post('https://test.salesforce.com/services/oauth2/token',data).then(response => {
