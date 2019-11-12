@@ -52,7 +52,7 @@ router.post('/bva',function (req, res) {
           "insuranceType": "Pharmacy Plan",
           "insuranceRank": 1,
           "insurancePlanPhone": 9878786511,
-          "insuranceName": "Rose R",
+          "insuranceName": "White W",
           "endDate": "2019-07-28",
           "employerName": "AbbVie",
           "effectiveDate": "2018-07-10",
