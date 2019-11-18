@@ -43,9 +43,9 @@ router.post('/bva',function (req, res) {
         }],
         "memberPlans": [{
           "publisherId": `${uuid1}`,
-          "rxPCN": "6456464",
-          "rxGroupNumber": "6456464",
-          "rxBIN": "6456464",
+          "rxPCN": "3453455",
+          "rxGroupNumber": "3453455",
+          "rxBIN": "3453455",
           "relationshipToCardholder": "Cardholder",
           "planType": "Commercial",
           "planSubType": "Employer",
@@ -60,7 +60,8 @@ router.post('/bva',function (req, res) {
           "cardholderOrPolicyID": "MID809",
           "cardHolderName": "Rose R",
           "disadvantageAccessReason": "Affordability"
-        }		],
+        }		]
+        /*,
         "priorAuthorizations": [{
           "publisherId": ""+uuid2,
           "statusforVariableParagraph": "Approved with Expiration",
@@ -99,7 +100,7 @@ router.post('/bva',function (req, res) {
           }],
           "coverageStatus": "Not Covered",
           "benefitsSource": "New"
-        }]
+        }]*/
       }
     };
 
