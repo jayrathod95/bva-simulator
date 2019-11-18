@@ -19,6 +19,7 @@ router.post('/bva',function (req, res) {
   var clientSecret = '6B910DEF3E10F6CCE4D976A6E9FA94BFA5182C2048B0EC16EAAE51BCA562B3E5';
   var username = 'integration.user@abbvie.com.pap.rhfd';
   var password = 'newuser!123';
+
   //authenticate with sf
   var data = `grant_type=password&client_id=${clientId}&client_secret=${clientSecret}&username=${username}&password=${password}`;
   axios.post('https://test.salesforce.com/services/oauth2/token',data).then(response => {
@@ -42,16 +43,16 @@ router.post('/bva',function (req, res) {
         }],
         "memberPlans": [{
           "publisherId": `${uuid1}`,
-          "rxPCN": "73732887",
-          "rxGroupNumber": "73732887",
-          "rxBIN": "73732887",
+          "rxPCN": "73732888",
+          "rxGroupNumber": "73732888",
+          "rxBIN": "73732888",
           "relationshipToCardholder": "Cardholder",
           "planType": "Commercial",
           "planSubType": "Employer",
           "insuranceType": "Pharmacy Plan",
           "insuranceRank": 1,
           "insurancePlanPhone": 9878786511,
-          "insuranceName": "Rose R",
+          "insuranceName": "White W",
           "endDate": "2019-07-28",
           "employerName": "AbbVie",
           "effectiveDate": "2018-07-10",
