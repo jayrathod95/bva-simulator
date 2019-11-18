@@ -43,9 +43,9 @@ router.post('/bva',function (req, res) {
         }],
         "memberPlans": [{
           "publisherId": `${uuid1}`,
-          "rxPCN": "3465645656",
-          "rxGroupNumber": "3465645656",
-          "rxBIN": "3465645656",
+          "rxPCN": "6456464",
+          "rxGroupNumber": "6456464",
+          "rxBIN": "6456464",
           "relationshipToCardholder": "Cardholder",
           "planType": "Commercial",
           "planSubType": "Employer",
